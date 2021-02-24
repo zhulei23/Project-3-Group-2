@@ -1,0 +1,220 @@
+
+{
+    "AirBnB ": {
+        "white_2018": 50.0,
+        "asian_2018": 36.0,
+        "latino_2018": 7.0,
+        "black_2018": 3.0,
+        "multi_2018": 3.0
+    },
+    "Amazon": {
+        "white_2018": 48.0,
+        "asian_2018": 13.0,
+        "latino_2018": 13.0,
+        "black_2018": 21.0,
+        "multi_2018": 0.0
+    },
+    "Apple": {
+        "white_2018": 54.0,
+        "asian_2018": 21.0,
+        "latino_2018": 13.0,
+        "black_2018": 9.0,
+        "multi_2018": 3.0
+    },
+    "Cisco": {
+        "white_2018": 53.0,
+        "asian_2018": 37.0,
+        "latino_2018": 5.0,
+        "black_2018": 4.0,
+        "multi_2018": 1.0
+    },
+    "Dell": {
+        "white_2018": 69.0,
+        "asian_2018": 9.0,
+        "latino_2018": 11.0,
+        "black_2018": 10.0,
+        "multi_2018": 0.0
+    },
+    "Etsy ": {
+        "white_2018": 79.0,
+        "asian_2018": 10.0,
+        "latino_2018": 4.0,
+        "black_2018": 3.0,
+        "multi_2018": 4.0
+    },
+    "Facebook": {
+        "white_2018": 49.0,
+        "asian_2018": 40.0,
+        "latino_2018": 5.0,
+        "black_2018": 3.0,
+        "multi_2018": 3.0
+    },
+    "Flickr": {
+        "white_2018": 45.0,
+        "asian_2018": 44.0,
+        "latino_2018": 4.0,
+        "black_2018": 2.0,
+        "multi_2018": 2.0
+    },
+    "Google": {
+        "white_2018": 53.0,
+        "asian_2018": 36.0,
+        "latino_2018": 4.0,
+        "black_2018": 3.0,
+        "multi_2018": 4.0
+    },
+    "Google+": {
+        "white_2018": 56.0,
+        "asian_2018": 35.0,
+        "latino_2018": 4.0,
+        "black_2018": 2.0,
+        "multi_2018": 4.0
+    },
+    "Groupon": {
+        "white_2018": 62.0,
+        "asian_2018": 20.0,
+        "latino_2018": 8.0,
+        "black_2018": 8.0,
+        "multi_2018": 0.0
+    },
+    "HP": {
+        "white_2018": 73.0,
+        "asian_2018": 12.0,
+        "latino_2018": 8.0,
+        "black_2018": 4.0,
+        "multi_2018": 2.0
+    },
+    "Indiegogo": {
+        "white_2018": 58.0,
+        "asian_2018": 28.0,
+        "latino_2018": 7.0,
+        "black_2018": 4.0,
+        "multi_2018": 0.0
+    },
+    "Ingram Micro": {
+        "white_2018": 52.0,
+        "asian_2018": 14.0,
+        "latino_2018": 19.0,
+        "black_2018": 14.0,
+        "multi_2018": 1.0
+    },
+    "Instagram": {
+        "white_2018": 49.0,
+        "asian_2018": 40.0,
+        "latino_2018": 5.0,
+        "black_2018": 3.0,
+        "multi_2018": 3.0
+    },
+    "Intel": {
+        "white_2018": 48.0,
+        "asian_2018": 39.0,
+        "latino_2018": 9.0,
+        "black_2018": 4.0,
+        "multi_2018": 0.0
+    },
+    "LinkedIn": {
+        "white_2018": 52.0,
+        "asian_2018": 39.0,
+        "latino_2018": 4.0,
+        "black_2018": 4.0,
+        "multi_2018": 2.0
+    },
+    "Microsoft": {
+        "white_2018": 56.0,
+        "asian_2018": 31.0,
+        "latino_2018": 6.0,
+        "black_2018": 4.0,
+        "multi_2018": 2.0
+    },
+    "Netflix": {
+        "white_2018": 49.0,
+        "asian_2018": 24.0,
+        "latino_2018": 6.0,
+        "black_2018": 4.0,
+        "multi_2018": 0.0
+    },
+    "Nvidia": {
+        "white_2018": 37.0,
+        "asian_2018": 45.0,
+        "latino_2018": 3.0,
+        "black_2018": 1.0,
+        "multi_2018": 14.0
+    },
+    "Pandora": {
+        "white_2018": 65.0,
+        "asian_2018": 16.0,
+        "latino_2018": 8.0,
+        "black_2018": 5.0,
+        "multi_2018": 5.0
+    },
+    "Pinterest": {
+        "white_2018": 48.0,
+        "asian_2018": 41.0,
+        "latino_2018": 6.0,
+        "black_2018": 3.0,
+        "multi_2018": 2.0
+    },
+    "Salesforce": {
+        "white_2018": 65.0,
+        "asian_2018": 24.0,
+        "latino_2018": 4.0,
+        "black_2018": 3.0,
+        "multi_2018": 3.0
+    },
+    "Slack": {
+        "white_2018": 59.0,
+        "asian_2018": 24.0,
+        "latino_2018": 7.0,
+        "black_2018": 5.0,
+        "multi_2018": 4.0
+    },
+    "Tumblr": {
+        "white_2018": 45.0,
+        "asian_2018": 44.0,
+        "latino_2018": 4.0,
+        "black_2018": 2.0,
+        "multi_2018": 2.0
+    },
+    "Twitter": {
+        "white_2018": 44.0,
+        "asian_2018": 26.0,
+        "latino_2018": 3.0,
+        "black_2018": 3.0,
+        "multi_2018": 3.0
+    },
+    "Uber": {
+        "white_2018": 49.0,
+        "asian_2018": 32.0,
+        "latino_2018": 6.0,
+        "black_2018": 8.0,
+        "multi_2018": 4.0
+    },
+    "Yahoo!": {
+        "white_2018": 45.0,
+        "asian_2018": 44.0,
+        "latino_2018": 4.0,
+        "black_2018": 2.0,
+        "multi_2018": 2.0
+    },
+    "Yelp": {
+        "white_2018": 62.0,
+        "asian_2018": 15.0,
+        "latino_2018": 10.0,
+        "black_2018": 6.0,
+        "multi_2018": 5.0
+    },
+    "YouTube": {
+        "white_2018": 56.0,
+        "asian_2018": 35.0,
+        "latino_2018": 4.0,
+        "black_2018": 2.0,
+        "multi_2018": 4.0
+    },
+    "eBay": {
+        "white_2018": 50.0,
+        "asian_2018": 39.0,
+        "latino_2018": 6.0,
+        "black_2018": 3.0,
+        "multi_2018": 1.0
+    }
+}

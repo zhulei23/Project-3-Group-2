@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<!---Bootstrap and CSS-->
+<head>
+  <meta charset="UTF-8">
+  <title>Coders Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="bootstrap.css">
+</head>
+
+<!---NAV BAR-->
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="landing.html">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse active" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="About Us Code\about.html">About Us</a>
+        </li>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="Map\index.html">Map</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="Income_SZ\income_index.html">Income</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="Tech_Companies_Race_Gender\tech_gender_race_index.html">Diversity in Tech</a>
+      </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="data.html" tabindex="-1" aria-disabled="true">Data</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!---Intro-->
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Diversity in Coding Dashboard</h1>
+      <p class="lead">Project 2- Group 2</p>
+      <hr class="my-4">
+      <p>The purpose of this dashboard is to tell the story of introductory coders across the word and illustrate findings about their lives, including how they identify, where they live, current incomes, current industries, expected earning potentials, and job/subject interests related to coding.</p>
+      <p>See the navigation pane at the top of the page for links to each page of the dashboard. To learn more about our team, click the About Us tab. The Map tab illustrates survey data from coders across the world with markers that identify the number of survey participants and average age. The Income tab illustrates various visualizations related to coders' income by country and filtered by gender. The Diversity in Tech tab highlights racial and gender diversity among a selection of key tech companies across the world. To access the raw data from the Free Code Camp dataset, click the Data tab.</p>
+      <p>Click the buttons below to access the GitHub repository for this project or to learn more about the datasets and survey results.</p>
+      <a class="btn btn-primary btn-lg" href="https://github.com/rjkassing/Project-2-Group-2.git" target= "_blank" role="button">GitHub Repo</a>  <a class="btn btn-primary btn-lg" href="https://www.freecodecamp.org/news/we-asked-20-000-people-who-they-are-and-how-theyre-learning-to-code-fff5d668969/" target= "_blank" role="button">Free Code Camp</a> <a class="btn btn-primary btn-lg" href="https://www.informationisbeautiful.net/visualizations/diversity-in-tech/?utm_content=buffer84407&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer" target= "_blank" role="button">Info is Beautiful</a> 
+    </div>
+  </div>
+
+
+  <!---Main Content-->
+<div class= "container">
+        <br>
+        <h2>Data Sources</h2>
+        <hr>
+        <p>The primary dataset for this project is a survey of more than 20,000 people who started coding within the last five years, distributed by Free Code Camp. Free Code Camp is an open source community teachning people to code and build projects for nonprofits. Surveyors reached out to participants through Twitter and email lists of various organizations that help people learn to code (like Georgia Tech Bootcamps!).
+          The goal of the survey was to understand people's motivations for learning to code, how they're learning to code, their demographics, and their socioeconomic background. </p>
+        <p>The secondary dataset for this project is an Employee Diversity in Tech dataset that summarizes global employee data from several leading technology firms where data were publicly available. These data are not exhaustive; not all companies declare their figures, and most don’t reveal the ratio of manual labourers to executives. Data were collected on a yearly basis between 2014-2018. Diversity is measured based on race of employees in the following categories: White, Asian, Latino, Black, Multi, Other, and Undeclared. Gender categories were Male and Female. More information is available at informationisbeautiful.net where we accessed the latest dataset.</p>
+        <br>
+        <h2>Summary of Findings</h2>
+        <hr>
+        <p>These code camp data show that:
+          <ul>
+            <li>67% of participants live outside the United States</li>
+            <li>The median age of participants is about 30 years old</li>
+            <li>21% of particiants identify as women</li>
+            <li>About a quarter of participants identify as being part of an ethnic minority in their country</li>
+            <li>8% of participants are military veterans</li>
+            <li>Particpants have been coding for an average of 21 months</li>
+            <li>17% of participants already landed their first developer job</li>
+          </ul>
+          
+          <p>These diversity in tech data show that:
+            <ul>
+              <li>In the last 12 months, Facebook, Apple, eBay and Microsoft hired 1% more women. LinkedIn increased their female staff by 3%. Google’s gender ratio stayed the same.</li>
+              <li>Microsoft gained 3% non-white employees, Facebook 2%; while Google, Apple and eBay increased their non-white staff by 1%. LinkedIn lost 3% of its non-white employees.</li>
+              <li>Within the companies who expanded their ethnic diversity, Asian staff accounted for the majority of the increase, while the ratio of Hispanic employees remained static.</li> 
+              <li>Apple registered the biggest jump in hiring diversity: 3% increase in Asian hires.</li>
+            </ul>
+        <br>   
+        <h2>Why is Diversity in Tech Important?</h2>
+        <hr>
+        <p>This video illustrates one perspective on why diversity in tech fields is critical for progress and why this field appeals to so many types of people.<p>
+        <br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/OOQfQwxCOF0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br>
+        <h2>Data at a Glance</h2>
+        <p> This visualization illustrates the current employment fields of coders who completed the survey. The vast majority of coders are already in the software and engineering field. Other fields include healthcare, education, legal, sales, finance, and transportation.</p>
+    </div>
+</body>
+</html>
+
+
+ 
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
