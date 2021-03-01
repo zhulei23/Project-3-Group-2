@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  background:white;
+  background:d#e74c3c;
 }
 
 h1 {
@@ -19,7 +19,7 @@ h1 {
   margin: 0;
   margin-bottom: 20px;
   font-size: 50px;
-  color: #333;
+  color: #e74c3c;
   text-align: center;
 }
 
@@ -28,7 +28,7 @@ h2 {
 }
 
 a {
-  color: #0027FF;
+  color: #e74c3c;
 }
 
 /* Selecting elements by class */
