@@ -7,7 +7,6 @@ from flask import (
     jsonify,
     request,
     redirect)
-from sqlalchemy import create_engine, func
 
 #################################################
 # Flask Setup
