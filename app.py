@@ -1,5 +1,5 @@
 # import necessary libraries
-from models import create_classes
+#from models import create_classes
 import os
 from flask import (
     Flask,
@@ -7,6 +7,7 @@ from flask import (
     jsonify,
     request,
     redirect)
+from sqlalchemy import create_engine, func
 
 #################################################
 # Flask Setup
@@ -27,4 +28,4 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
