@@ -34,7 +34,7 @@ a {
 /* Selecting elements by class */
 .container {
   width: 1024px;
-  margin: 0 auto;
+  margin: 90 auto;
 }
 
 /* Selecting elements by ID */
@@ -45,25 +45,29 @@ a {
 }
 
 #figure {
-  position: relative;
+  position: center;
+  
 }
 
 #bio-name {
-  position: relative;
-  top: 150px;
+  position: center;
+  top: 200px;
   left: 30px;
 }
 
 #main-bio {
+  position: center;
   width: 100%;
 }
 
 #contact-info {
+  position: center;
   width: 40%;
 }
 
 #bio-image {
-  width: 200px;
-  height: 200px;
-  margin-right: 20px;
+  width: 300px;
+  height: 300px;
+  left: 200px;
+  margin-right: 100px;
 }
