@@ -55,7 +55,7 @@ a {
 }
 
 #main-bio {
-  width: 120%;
+  width: 100%;
 }
 
 #contact-info {
@@ -63,7 +63,7 @@ a {
 }
 
 #bio-image {
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
   margin-right: 20px;
 }

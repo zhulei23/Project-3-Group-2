@@ -15,7 +15,7 @@ body {
 .carousel {
   margin-bottom: 4rem;
   background-color: black;
-  border: 15px solid gray;
+  border: 15px solid #ff0000;
   padding: 15px;
 }
 /* Declare heights because of positioning of img element */
