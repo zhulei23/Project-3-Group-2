@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MET Openaccess</title>
+  <title>Tech in Art</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
@@ -18,17 +18,20 @@
     <ul class="navbar-nav mr-auto">
       </li>
       <li class="nav-item active">
-          <a class="nav-link" href="{{url_for('Visualizations')}}">Accession-comparison</a>
+          <a class="nav-link" href="{{url_for('Accession-comparison')}}">Dashboard Visualizations</a>
       </li>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="">D3/Chord Visualization</a>
+    </li>
       <li class="nav-item active">
           <a class="nav-link" href="{{url_for('Map')}}">Map</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="">Analysis</a>
+        <a class="nav-link" href="">Chinese Art</a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="machine_learning.html">Machine Learning Model</a>
+      <a class="nav-link" href="{{url_for('machine_learning')}}">Machine Learning</a>
     </li>
       <li class="nav-item active">
         <a class="nav-link" href="{{url_for('About_Us')}}">About Us</a>
@@ -37,17 +40,23 @@
   </div>
 </nav>
 
-<div class = Tableau Visuals >
-    <h2>How is Cutting Edge Technology being applied to Art?</h2>
+<br>
+<br>
 
+<div class = Tableau Visuals >
+    <h2>How is Cutting Edge Technology being Applied to Art?</h2>
+    <p>The following visualizations highlight select trends and information from the Met Open Access Dataset.</p>
+    <p>For more information on the fields included in the dataset, visit the <a href="https://metmuseum.github.io/#object" target="_blank">Met Fields</a> page on Github.</p>
     <br>
+    <br>
+    <h3>Accession Pre and Post World War II and Overall Accession of Met Collection</h3>
     <iframe width="1100" height="700" src="https://public.tableau.com/views/Project3_16144422699010/AccessionofArtPieces?:language=en&:display_count=y&:origin=viz_share_link:embed=yes&:showVizHome=no" ></iframe>
     <br>
 </div>
 <br>
 
 <div class = Tableau Visuals >
-  <h3>The MET Arts Stats I</h3>
+  <h3>The Met Arts Stats I</h3>
 
   <br>
   <iframe width="1100" height="900" src="https://public.tableau.com/views/Project3_Dashboard_16140582624580/Arts_Story?:language=en&:display_count=y&publish=yes&:origin=viz_share_link:embed=yes&:showVizHome=no" ></iframe>
@@ -55,18 +64,19 @@
 </div>
 
 <br>
-  <h3>The MET Arts Stats II (Power BI)</h3>
+  <h3>The Met Arts Stats II (Power BI)</h3>
   <a><img src="./../static/Images/The_MET_Objects_Dashboard_PBI.jpg" width="1100" height="660"></a><br>
 
-
+<br>
   <div class = Tableau Visuals >
-    <h3>Average Object Age and Years of MET Possession by Department</h3>
-    
+    <h3>Average Object Age and Years of Met Possession by Department</h3>
+  
     <br>
     <iframe width="1100" height="900" src="https://public.tableau.com/views/ObjectAgeandMetPossessionDashboards/AvgAgeYrsPossessionbyDepartment?:language=en&:display_count=y&:origin=viz_share_link:embed=yes&:showVizHome=no" ></iframe>
     <br>
   </div>
-  
+
+  <br>
   <div class = Tableau Visuals >
     <h3>Average Object Age by Accession Year</h3>
     
