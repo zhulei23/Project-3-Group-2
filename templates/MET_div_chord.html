@@ -3,7 +3,7 @@
   <head>
     <!--Chord - Python wrapper around d3-chord-->
   	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Chord Diagram</title>
+    <title>Tech in Art</title>
 
     <!-- Google Fonts -->
     <link
@@ -91,20 +91,20 @@
       <ul class="navbar-nav mr-auto">
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="{{url_for('Accession-comparison')}}">Dashboard Visualizations</a>
+            <a class="nav-link" href="{{url_for('Dashboard_Visualizations')}}">Dashboard Visualizations</a>
         </li>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="{{url_for('MET_div_chord)}}">D3/Chord Visualization</a>
+          <a class="nav-link" href="{{url_for('D3_Chord')}}">D3/Chord Visualization</a>
       </li>
         <li class="nav-item active">
             <a class="nav-link" href="{{url_for('Map')}}">Map</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="">Chinese Art</a>
+          <a class="nav-link" href="{{url_for('Chinese_Art')}}">Chinese Art</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="{{url_for('machine_learning')}}">Machine Learning</a>
+        <a class="nav-link" href="{{url_for('Machine_Learning')}}">Machine Learning</a>
       </li>
         <li class="nav-item active">
           <a class="nav-link" href="{{url_for('About_Us')}}">About Us</a>
@@ -117,11 +117,13 @@
   <br>
   
   <div class = Tableau Visuals >
-      <h2>Which Countries have the Most Representation at the Met?</h2>
+      <h2 style="text-align: center">Which Countries have the Most Representation at the Met?</h2>
+      <div class= "container">
+        <div class="row justify-content-md-center">
       <p>The following chord diagram (d3 chord package) visualizes the top 20 represented countries and the artifact classifications.</p>
       <p>For more information about the collection, visit the <a href="https://www.metmuseum.org/art/collection" target="_blank">Met's search engine.</a></p>
-      <br>
-      <br>
+      <br><br><br>
+  </div>
 
 
     <div id="chart-6755e030" class="chord">

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MET Openaccess</title>
+  <title>Tech in Art</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
@@ -18,20 +18,20 @@
     <ul class="navbar-nav mr-auto">
       </li>
       <li class="nav-item active">
-          <a class="nav-link" href="{{url_for('Accession-comparison')}}">Dashboard Visualizations</a>
+          <a class="nav-link" href="{{url_for('Dashboard_Visualizations')}}">Dashboard Visualizations</a>
       </li>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="{{url_for('MET_div_chord)}}">D3/Chord Visualization</a>
+        <a class="nav-link" href="{{url_for('D3_Chord')}}">D3/Chord Visualization</a>
     </li>
       <li class="nav-item active">
           <a class="nav-link" href="{{url_for('Map')}}">Map</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="">Chinese Art</a>
+        <a class="nav-link" href="{{url_for('Chinese_Art')}}">Chinese Art</a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="{{url_for('machine_learning')}}">Machine Learning</a>
+      <a class="nav-link" href="{{url_for('Machine_Learning')}}">Machine Learning</a>
     </li>
       <li class="nav-item active">
         <a class="nav-link" href="{{url_for('About_Us')}}">About Us</a>
@@ -40,14 +40,16 @@
   </div>
 </nav>
 
-<div class = Tableau Visuals >
-    <h2>The MET Arts around the World</h2>
+<div class = Tableau Visuals ><br>
+    <h2 style="text-align: center">The Met Arts around the World</h2>
+    <br><br>
 
-    <br>
-    <iframe width="1200" height="800" src="https://public.tableau.com/shared/95PM5XTX6?:display_count=y&:origin=viz_share_link:embed=yes&:showVizHome=no" ></iframe>
-    <br>
-    <br>
-    <iframe width="1200" height="800" src="https://public.tableau.com/views/MET_Map_Timeline/Dashboard1?:language=en&:display_count=y&publish=yes&:origin=viz_share_link:embed=yes&:showVizHome=no" ></iframe>
+    <p align="center"><iframe width="1200" height="800" src="https://public.tableau.com/shared/95PM5XTX6?:display_count=y&:origin=viz_share_link:
+      embed=yes&:showVizHome=no" ></iframe></p>
+    <br><br>
+
+    <p align="center"><iframe width="1200" height="800" src="https://public.tableau.com/views/MET_Map_Timeline/Dashboard1?:
+      language=en&:display_count=y&publish=yes&:origin=viz_share_link:embed=yes&:showVizHome=no" ></iframe></p>
     <br>
 </div>
 <br>
