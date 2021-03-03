@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MET Openaccess</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="Static/css/style.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">Home</a>
+    <a class="navbar-brand" href="{{url_for('Home')}}">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -18,20 +18,20 @@
     <ul class="navbar-nav mr-auto">
       </li>
       <li class="nav-item active">
-          <a class="nav-link" href="Accession-comparison.html">Visualizations</a>
+          <a class="nav-link" href="{{url_for('Visualizations')}}">Accession-comparison</a>
       </li>
       </li>
       <li class="nav-item active">
-          <a class="nav-link" href="Map.html">Map</a>
+          <a class="nav-link" href="{{url_for('Map')}}">Map</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="">Analysis</a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="">Machine Learning Model</a>
+      <a class="nav-link" href="machine_learning.html">Machine Learning Model</a>
     </li>
       <li class="nav-item active">
-        <a class="nav-link" href="about_us.html">About Us</a>
+        <a class="nav-link" href="{{url_for('About_Us')}}">About Us</a>
       </li>
     </ul>
   </div>
@@ -56,9 +56,26 @@
 
 <br>
   <h3>The MET Arts Stats II (Power BI)</h3>
-  <a><img src="Static/images/The_MET_Objects_Dashboard_PBI.png" width="1100" height="660"></a><br>
+  <a><img src="./../static/Images/The_MET_Objects_Dashboard_PBI.jpg" width="1100" height="660"></a><br>
 
+
+  <div class = Tableau Visuals >
+    <h3>Average Object Age and Years of MET Possession by Department</h3>
     
+    <br>
+    <iframe width="1100" height="900" src="https://public.tableau.com/views/ObjectAgeandMetPossessionDashboards/AvgAgeYrsPossessionbyDepartment?:language=en&:display_count=y&:origin=viz_share_link:embed=yes&:showVizHome=no" ></iframe>
+    <br>
+  </div>
+  
+  <div class = Tableau Visuals >
+    <h3>Average Object Age by Accession Year</h3>
+    
+    <br>
+    <iframe width="1100" height="900" src="https://public.tableau.com/views/ObjectAgeandMetPossessionDashboards/AvgAgebyAccessionYear?:language=en&:display_count=y&:origin=viz_share_link:embed=yes&:showVizHome=no" ></iframe>
+    <br>
+  </div>
+
+
 <!-- Footer -->
 <footer class="footer font-small footer-dark">
   <div class="footer-copyright text-center py-1">© Copyright Coding Bootcamp 2021</div>      

@@ -6,26 +6,27 @@
   <meta charset="UTF-8">
   <title>About Us</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="bootstrap.css">
-  <link rel="stylesheet" href="Static/About Us Code/style.css">
+  <link rel="stylesheet" href="./../static/About Us Code/bootstrap.css">
+  <link rel="stylesheet" href="./../static/About Us Code/style.css">
 </head>
 
 <!---NAV BAR-->
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">Home</a>
+    <a class="navbar-brand" href="{{url_for('Home')}}">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
    <div class="collapse navbar-collapse active" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       </li>
       <li class="nav-item active">
-          <a class="nav-link" href="Accession-comparison.html">Visualizations</a>
+          <a class="nav-link" href="{{url_for('Visualizations')}}">Visualizations</a>
       </li>
       </li>
       <li class="nav-item active">
-          <a class="nav-link" href="Map.html">Map</a>
+          <a class="nav-link" href="{{url_for('Map')}}">Map</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="">Analysis</a>
@@ -34,23 +35,23 @@
       <a class="nav-link" href="">Machine Learning Model</a>
     </li>
       <li class="nav-item active">
-        <a class="nav-link" href="about_us.html">About Us</a>
+        <a class="nav-link" href="{{url_for('About_Us')}}">About Us</a>
       </li>
     </ul>
-  </div>
-</nav>
+    </div>
+  </nav>
 
   <!---Main Content-->
 <body>
 
   <header>
-    <h1>Group 2 in Pointillism</h1>
+    <h1>Group 2 in Points</h1>
   </header>
 
   <main class="container">
     <section id="main-bio">
       <section id="figure">
-        <img id="bio-image" src="Static/About Us Code/Images/SerapBasaran_drawing.jpg" alt="SerapBasaran">
+        <img id="bio-image" src="./../static/About Us Code/Images/SerapBasaran_drawing.jpg" alt="SerapBasaran">
       </section>
       <h2>Serap Basaran</h2>
       <ul>
@@ -62,7 +63,7 @@
    
     <section id="main-bio">
       <section id="figure">
-        <img id="bio-image" src="Static/About Us Code/Images/LindseyHoffman_drawing.jpg" alt="LindseyHoffman">
+        <img id="bio-image" src="./../static/About Us Code/Images/LindseyHoffman_drawing.jpg" alt="LindseyHoffman">
       </section>
       <h2>Lindsey Hoffman</h2>
       <ul>
@@ -74,7 +75,7 @@
 
     <section id="main-bio">
       <section id="figure">
-        <img id="bio-image" src="Static/About Us Code/Images/MiaIsreal_drawing.jpg" alt="MiaIsreal.PNG">
+        <img id="bio-image" src="./../static/About Us Code/Images/MiaIsreal_drawing.jpg" alt="MiaIsreal.PNG">
       </section>
       <h2>Mia Israel</h2>
       <ul>
@@ -86,7 +87,7 @@
 
     <section id="main-bio">
       <section id="figure">
-        <img id="bio-image" src="Static/About Us Code/Images/ZiJin_drawing.jpg" alt="Your Name">
+        <img id="bio-image" src="./../static/About Us Code/Images/ZiJin_drawing.jpg" alt="Your Name">
       </section>
       <h2>Zi Jin</h2>
       <ul>
@@ -97,7 +98,7 @@
     </section>
 
     <section id="figure">
-        <img id="bio-image" src="Static/About Us Code/Images/RickKassing_drawing.jpg" alt="Your Name">
+        <img id="bio-image" src="./../static/About Us Code/Images/RickKassing_drawing.jpg" alt="Your Name">
       </section>
       <h2>Rick Kassing</h2>
       <ul>
@@ -109,7 +110,7 @@
 
     <section id="main-bio">
       <section id="figure">
-        <img id="bio-image" src="Static/About Us Code/Images/LisaRios_drawing.jpg" alt="Your Name">
+        <img id="bio-image" src="./../static/About Us Code/Images/LisaRios_drawing.jpg" alt="Your Name">
       </section>
       <h2>Lisa Rios</h2>
       <ul>
@@ -121,7 +122,7 @@
 
     <section id="main-bio">
       <section id="figure">
-        <img id="bio-image" src="Static/About Us Code/Images/StephanieZhu_v2_drawing.jpg" alt="Your Name">
+        <img id="bio-image" src="./../static/About Us Code/Images/StephanieZhu_v2_drawing.jpg" alt="Your Name">
       </section>
       <h2>Stephanie Zhu</h2>
       <ul>
