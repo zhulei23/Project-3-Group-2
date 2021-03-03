@@ -1,68 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tech in Art</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="Static/css/style.css">
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{{url_for('Home')}}">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-   <div class="collapse navbar-collapse active" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tech in Art</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./../static/css/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{{url_for('Home')}}">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+     <div class="collapse navbar-collapse active" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{url_for('Dashboard_Visualizations')}}">Dashboard Visualizations</a>
+        </li>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('D3_Chord')}}">D3/Chord Visualization</a>
+      </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{url_for('Map')}}">Map</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('Chinese_Art')}}">Chinese Art</a>
       </li>
       <li class="nav-item active">
-          <a class="nav-link" href="{{url_for('Accession-comparison')}}">Dashboard Visualizations</a>
+        <a class="nav-link" href="{{url_for('Machine_Learning')}}">Machine Learning</a>
       </li>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="{{url_for('MET_div_chord)}}">D3/Chord Visualization</a>
-    </li>
-      <li class="nav-item active">
-          <a class="nav-link" href="{{url_for('Map')}}">Map</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="">Chinese Art</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="{{url_for('machine_learning')}}">Machine Learning</a>
-    </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="{{url_for('About_Us')}}">About Us</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('About_Us')}}">About Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
 <br>
 <br>
 
 <div class = Tableau Visuals >
-    <h2>Random Forest Model</h2>
+    <h2 style="text-align: center">Random Forest Model</h2><br>
+    <div class= "container">
+      <div class="row justify-content-md-center">
+        <div class="col">
     <p>The Met Open Access Dataset contains over 470,000 objects total with information including Object ID, Department, Gallery, Title, Culture, Country, and Region, among many others. The Random Forest model was applied to a sample of the full dataset (n= 200,000) with n-estimator= 5,000 to assess the importance of the following features in predicting whether or not an object is part of the MET's Public Domain: Department, Object End Date, Accession Year, and if the object is a Timeline Work or a Highlight for its specific artist. These features were selected for inclusion in the model because of their data types- they were integers or converted easily to integers. The bar graph and table below illustrate the findings of the model. Department has a high importance for predicting if an object is in the Met's Public Domain. </p>
     <br>
-    <iframe width="1100" height="700" src="https://public.tableau.com/views/RandomForestModel/Dashboard1?:language=en&:display_count=y&:origin=viz_share_link:embed=yes&:showVizHome=no" ></iframe>
-    <br>
+    <p align="center"><iframe width="1100" height="700" src="https://public.tableau.com/views/RandomForestModel/Dashboard1?:language=en&:
+      display_count=y&:origin=viz_share_link:embed=yes&:showVizHome=no" ></iframe></p>
+    <br><br>
 </div>
 <br>
 
 <div class = Tableau Visuals >
-  <h2>ARIMA Time Series Model</h2>
+  <h2 style="text-align: center">ARIMA Time Series Model</h2><br>
   <p>The ARIMA was used to fit and predict the number of Metropolitan Museum of Art acquisitions.  ARIMA models rely on parameters p (lag observations), d (differencing), and q (moving average window) to fit and predict.  Statistical calculations and trial-and-error produced a (p, d, q) parameter of (0, 1, 1) meaning that the model was to ignore lags, difference the data one time, and utilize a window of one for the moving average.  The images below illustrate the model fit and prediction results. There is some degree of error between the actual acquisitions (blue line) and the predictions (red line) because of the years with significantly more additions to the museum collection.A timeline below shows the possible correlation between increased acquisitions and significant global events.  These spikes made fitting the model difficult, and could likely mean an inaccurate prediction.  The ARIMA model cannot predict these major global events, limiting its accuracy.</p>
   <br>
   <a><img src="./../static/Images/model_fit.png" width="1100" height="660"></a><br>
   <a><img src="./../static/Images/prediction.png" width="1100" height="660"></a><br>
   <br>
-  <a><img src="./../static/Images/Museum_Acquisition_and_Global_Events.png" width="1100" height="660"></a><br>
+  <a><img src="./../static/Images/Museum Acquisition and Global Events.png" width="1100" height="660"></a><br><br>
   <br>
 </div>
-<br>
+
   
 <!-- Footer -->
 <footer class="footer font-small footer-dark">

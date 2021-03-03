@@ -1,5 +1,5 @@
 # import necessary libraries
-#from models import create_classes
+
 import os
 from flask import (
     Flask,
@@ -22,13 +22,25 @@ app = Flask(__name__)
 def Home():
     return render_template("index.html")
 
-@app.route("/Visualizations")
-def Visualizations():
+@app.route("/Dashboard_Visualizations")
+def Dashboard_Visualizations():
     return render_template("Accession-comparison.html")
+
+@app.route("/D3_Chord")
+def D3_Chord():
+    return render_template("MET_div_chord.html")
 
 @app.route("/Map")
 def Map():
     return render_template("Map.html")
+
+@app.route("/Chinese_Art")
+def Chinese_Art():
+    return render_template("chinese_art.html")
+
+@app.route("/Machine_Learning")
+def Machine_Learning():
+    return render_template("machine_learning.html")
 
 
 @app.route("/About_Us")
