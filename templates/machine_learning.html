@@ -28,7 +28,7 @@
         <a class="nav-link" href="">Analysis</a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="machine_learning.html">Machine Learning Model</a>
+      <a class="nav-link" href="machine_learning.html">Machine Learning</a>
     </li>
       <li class="nav-item active">
         <a class="nav-link" href="about_us.html">About Us</a>
@@ -46,7 +46,17 @@
 </div>
 <br>
 
-
+<div class = Tableau Visuals >
+  <h2>ARIMA Time Series Model</h2>
+  <p>The ARIMA was used to fit and predict the number of Metropolitan Museum of Art acquisitions.  ARIMA models rely on parameters p (lag observations), d (differencing), and q (moving average window) to fit and predict.  Statistical calculations and trial-and-error produced a (p, d, q) parameter of (0, 1, 1) meaning that the model was to ignore lags, difference the data one time, and utilize a window of one for the moving average.  The images below illustrate the model fit and prediction results. There is some degree of error between the actual acquisitions (blue line) and the predictions (red line) because of the years with significantly more additions to the museum collection.A timeline below shows the possible correlation between increased acquisitions and significant global events.  These spikes made fitting the model difficult, and could likely mean an inaccurate prediction.  The ARIMA model cannot predict these major global events, limiting its accuracy.</p>
+  <br>
+  <a><img src="./../static/Images/model_fit.png" width="1100" height="660"></a><br>
+  <a><img src="./../static/Images/prediction.png" width="1100" height="660"></a><br>
+  <br>
+  <a><img src="./../static/Images/Museum_Acquisition_and_Global_Events.png" width="1100" height="660"></a><br>
+  <br>
+</div>
+<br>
   
 <!-- Footer -->
 <footer class="footer font-small footer-dark">

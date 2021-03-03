@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MET Openaccess</title>
+  <title>Tech in Art</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="./../static/css/style.css">
 </head>
@@ -29,7 +29,7 @@
         <a class="nav-link" href="">Analysis</a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="">Machine Learning Model</a>
+      <a class="nav-link" href="{{url_for('machine_learning')}}">Machine Learning</a>
     </li>
       <li class="nav-item active">
         <a class="nav-link" href="{{url_for('About_Us')}}">About Us</a>
@@ -124,10 +124,10 @@
 <div class="row">
   <div class="col-md-5">
   
-  <h4> The Metropolitan Museum of Art Open Access </h4>
+  <h4> Tech in Art: Applying The Metropolitan Museum of Art Open Access Dataset</h4>
   <br>
-  <p> The Metropolitan Museum of Art presents over 5,000 years of art from around the world for everyone to experience and enjoy. 
-      The Museum lives in three iconic sites in New York City—The Met Fifth Avenue, The Met Breuer, and The Met Cloisters. 
+  <p> The Metropolitan Museum of Art (Met or Museum) presents over 5,000 years of art from around the world for everyone to experience and enjoy. 
+      The Museum lives in three iconic sites in New York City: The Met Fifth Avenue, The Met Breuer, and The Met Cloisters. 
       Millions of people also take part in The Met experience online.<br>
   <br>
     Since it was founded in 1870, The Met has always aspired to be more than a treasury of rare and beautiful objects. 
@@ -136,40 +136,35 @@
   <br>
     The Metropolitan Museum of Art provides select datasets of information on more than 470,000 artworks in its Collection for unrestricted 
     commercial and noncommercial use. To the extent possible under law, The Metropolitan Museum of Art has waived all copyright and related or 
-    neighboring rights to this dataset using Creative Commons Zero. This work is published from: The United States Of America.<br>
+    neighboring rights to this dataset using Creative Commons Zero. This work is published from The United States Of America.<br>
   <br> 
-    You can also find 
-    the text of the CC Zero deed in the file LICENSE in this repository. These select datasets are now available for use in any media without permission 
+    You can also find the text of the CC Zero deed in the file LICENSE in this repository. These select datasets are now available for use in any media without permission 
     or fee; they also include identifying data for artworks under copyright. The datasets support the search, use, and interaction with the Museum’s collection.
     </p>
-    <p>If you want to take a closer look at metmuseum openaccess dataset, click to <a href="https://github.com/metmuseum/openaccess" target="_blank">Github MET 
-      museum openaccess</a></p>
-      
-  </div>
+    <p>If you want to take a closer look at the Met Open Access Dataset, click to <a href="https://github.com/metmuseum/openaccess" target="_blank">Github Met Open Access</a>.</p>
+    <p>Use the navigation bar above to explore the various components of this project, including select visualizations and maps from the Met open access dataset, an analysis of Chinese art from the data, 
+      and the application of two machine learning models used to take a deeper dive. For more information on the fields included in the dataset, visit the <a href="https://metmuseum.github.io/#object" target="_blank">Met Fields</a> page on Github.</p>
+  
+     <p>The machine learning models applied for this project are ARIMA Time Series Forecasting and Random Forest. The video included here may be of interest to those viewing this project because it provides additional information 
+      on how Google Analytics is developing machine-learning tools to help Smithsonian curators uncover the history and contributions of women in science.</p>
+    </div>
 
   <div class="col-md-5">
     <img src="./../static/Images/MET1.png" alt ="Met Openaccess"width="800px" height="400px" ><br>
     <br><br>
   <div class="col-md-5">
     <img src="./../static/Images/met-filckr_v2.jpg" alt ="Met Filckr"width="780px" height="300px" >
+    <br>
+    <br>
+    <br> 
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/xiHVDFJdrl8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </div>
 
-<div class="row">
-  <div class="col">
-    <br>
-    <h4> Machine Learning Modeling - Random Forest Model </h4>
-    <br>
-    <p>The Metropolitan Museum of Art provides select datasets of information on more than 470,000 artworks in its Collection for 
-      unrestricted commercial and noncommercial use. MET provides hi-res images of public-domain works from the The Met collection, 
-      all of which can be downloaded, shared, and remixed without restriction. However, only 3% of artworks has public-domain.
-      By utilizing machine learning, we will create a model for selecting art pieces to be provided with a public-domain.</p>
-  </div>
 
-  <div class="col-md-7">
-    <img src="./../static/Images/Random.jpg" alt ="Random tree" width="780" height="300">
-  </div>
-</div>
+<br>
+<br>
+<br>
 
 <!-- Footer -->
 <footer class="footer font-small footer-dark">
