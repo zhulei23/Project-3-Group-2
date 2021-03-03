@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Chord - Python wrapper around d3-chord-->
+  	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Chord Diagram</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tippy.js@6/themes/translucent.css"
+    />
+
+    <style>
+      .tippy-content {
+
+        font-family: "Lato", sans-serif;
+      }
+
+      #chart-6755e030, #featured-chart-6755e030 {
+        font-size: 10px;
+        font-family: "Lato", sans-serif;
+        text-align: center;
+        fill: #454545;
+      }
+
+      #chart-6755e030 svg, #featured-chart-6755e030 svg {
+        max-width: 900.0px;
+      }
+
+      .details_thumbs-chart-6755e030 {
+        margin:5.0px;
+        max-width:85.0px;
+        padding:0;
+        display:inline-block; 
+      }
+
+      .details_thumbs-chart-6755e030 img {
+        max-width:85.0px;
+      }
+
+      .details_thumbs-chart-6755e030 figcaption {
+        text-align: center;
+        font-size: 14.0px;
+      }
+
+      .hidden_chord {
+        display:none;
+      }
+
+      .arc_numbers {
+        paint-order: stroke;
+        stroke: #454545;
+        stroke-width: 2px; 
+        font-weight:bold;
+        fill: #fff;
+        font-size:10px;
+      }
+
+      @media (min-width: 600px) {
+				#chart-6755e030, #featured-chart-6755e030 {
+					font-size: 12px;
+				}
+
+        .arc_numbers{
+					font-size: 14px;
+        }
+			}
+    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tech in Art</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{{url_for('Home')}}">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+     <div class="collapse navbar-collapse active" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{url_for('Accession-comparison')}}">Dashboard Visualizations</a>
+        </li>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('MET_div_chord)}}">D3/Chord Visualization</a>
+      </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{url_for('Map')}}">Map</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="">Chinese Art</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{url_for('machine_learning')}}">Machine Learning</a>
+      </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('About_Us')}}">About Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <br>
+  <br>
+  
+  <div class = Tableau Visuals >
+      <h2>Which Countries have the Most Representation at the Met?</h2>
+      <p>The following chord diagram (d3 chord package) visualizes the top 20 represented countries and the artifact classifications.</p>
+      <p>For more information about the collection, visit the <a href="https://www.metmuseum.org/art/collection" target="_blank">Met's search engine.</a></p>
+      <br>
+      <br>
+
+
+    <div id="chart-6755e030" class="chord">
+    </div>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script>
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://datacrayon.com/assets/js/d3.min.js";
+
+      script.onload = function () {
+
+      var script2 = document.createElement("script");
+      script2.type = "text/javascript";
+      script2.src = "https://datacrayon.com/assets/chord/script.js";
+      script2.onload = function () {
+        margin = {
+        left: 100.0,
+        top: 100.0,
+        right: 100.0,
+        bottom: 100.0
+      };
+
+      width = Math.min(window.innerWidth, 900.0) - margin.left - margin.right;
+      height = Math.min(window.innerWidth, 900.0) - margin.top - margin.bottom;
+
+      tag_id = "chart-6755e030";
+      Names = ['United States', 'Peru', 'France', 'Egypt', 'Mexico', 'Indonesia', 'United Kingdom', 'Papua New Guinea', 'China', 'Germany', 'Nigeria', 'Congo', 'Italy', 'Canada', 'Colombia', 'Mali', "Cote d'Ivoire", 'Spain', 'India', 'Japan', 'divide', 'Ceramics', 'Musical Instruments', 'Sculpture', 'Glass', 'Textiles', 'Ornaments', 'Implements', 'Furniture', 'Metalwork', 'Silver', 'Containers', 'Architectural', 'Drawings', 'Paintings', 'Costumes', 'Jewelry', 'Enamels', 'Paper', 'Vessels', 'Glass-Stained', 'divide'];
+      colors = ['#332626', '#4c1b13', '#ff9180', '#99574d', '#f2beb6', '#ff6600', '#993d00', '#d9986c', '#bfa38f', '#4c3213', '#f2a200', '#7f6c20', '#4d4939', '#ccc233', '#293300', '#afbf8f', '#3f731d', '#55f23d', '#6cd998', '#165943', '#000000', '#b6f2de', '#39dae6', '#263033', '#5995b3', '#335566', '#79aaf2', '#000733', '#394173', '#2e1966', '#7736d9', '#e63df2', '#311a33', '#644d66', '#800077', '#e6acda', '#ff80d5', '#ff0066', '#4c001f', '#a6295b', '#e5001f', '#000000'];
+      opacityDefault = 0.8;
+      matrix = [[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1513.0, 553.0, 164.0, 2049.0, 849.0, 70.0, 60.0, 1357.0, 634.0, 1018.0, 124.0, 128.0, 594.0, 48.0, 48.0, 146.0, 0.0, 9.0, 27.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 63.0, 104.0, 0.0, 502.0, 1231.0, 415.0, 1.0, 0.0, 2.0, 532.0, 0.0, 0.0, 2.0, 52.0, 2.0, 0.0, 0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 235.0, 368.0, 100.0, 3.0, 25.0, 0.0, 4.0, 5.0, 190.0, 1.0, 0.0, 506.0, 12.0, 8.0, 2.0, 5.0, 171.0, 4.0, 1.0, 113.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 842.0, 50.0, 27.0, 63.0, 108.0, 2.0, 0.0, 0.0, 43.0, 0.0, 0.0, 2.0, 1.0, 4.0, 31.0, 19.0, 1.0, 197.0, 162.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 143.0, 137.0, 395.0, 0.0, 41.0, 144.0, 369.0, 3.0, 17.0, 5.0, 155.0, 1.0, 2.0, 8.0, 0.0, 0.0, 0.0, 0.0, 3.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 142.0, 258.0, 1.0, 348.0, 86.0, 351.0, 5.0, 0.0, 0.0, 98.0, 18.0, 0.0, 2.0, 59.0, 12.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 452.0, 208.0, 8.0, 238.0, 72.0, 0.0, 0.0, 25.0, 34.0, 18.0, 0.0, 2.0, 9.0, 2.0, 0.0, 9.0, 1.0, 1.0, 0.0, 6.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 55.0, 247.0, 0.0, 1.0, 30.0, 118.0, 8.0, 0.0, 0.0, 25.0, 7.0, 28.0, 345.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 639.0, 183.0, 0.0, 1.0, 6.0, 0.0, 0.0, 7.0, 0.0, 2.0, 0.0, 0.0, 0.0, 3.0, 0.0, 0.0, 0.0, 21.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 19.0, 301.0, 58.0, 16.0, 27.0, 0.0, 0.0, 4.0, 185.0, 0.0, 0.0, 1.0, 7.0, 9.0, 3.0, 0.0, 38.0, 0.0, 10.0, 55.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 62.0, 355.0, 0.0, 45.0, 58.0, 20.0, 5.0, 0.0, 0.0, 36.0, 7.0, 0.0, 0.0, 19.0, 9.0, 0.0, 0.0, 4.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 96.0, 165.0, 0.0, 92.0, 15.0, 42.0, 15.0, 0.0, 0.0, 24.0, 0.0, 0.0, 0.0, 48.0, 7.0, 0.0, 0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 29.0, 251.0, 43.0, 6.0, 42.0, 0.0, 0.0, 3.0, 39.0, 0.0, 0.0, 30.0, 0.0, 6.0, 3.0, 4.0, 7.0, 0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 118.0, 196.0, 0.0, 5.0, 9.0, 14.0, 1.0, 1.0, 4.0, 14.0, 0.0, 0.0, 1.0, 10.0, 9.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 36.0, 15.0, 0.0, 0.0, 251.0, 22.0, 0.0, 0.0, 0.0, 13.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0, 165.0, 0.0, 10.0, 56.0, 21.0, 10.0, 0.0, 0.0, 19.0, 11.0, 0.0, 0.0, 9.0, 20.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 7.0, 177.0, 0.0, 8.0, 25.0, 86.0, 6.0, 0.0, 0.0, 4.0, 3.0, 0.0, 0.0, 3.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 109.0, 47.0, 32.0, 1.0, 8.0, 0.0, 0.0, 3.0, 24.0, 3.0, 0.0, 15.0, 0.0, 26.0, 1.0, 1.0, 17.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 214.0, 6.0, 0.0, 5.0, 13.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 17.0, 211.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [1513.0, 0.0, 235.0, 842.0, 143.0, 0.0, 452.0, 0.0, 639.0, 19.0, 0.0, 0.0, 29.0, 0.0, 0.0, 0.0, 0.0, 109.0, 0.0, 17.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [553.0, 63.0, 368.0, 50.0, 137.0, 142.0, 208.0, 55.0, 183.0, 301.0, 62.0, 96.0, 251.0, 118.0, 36.0, 10.0, 7.0, 47.0, 214.0, 211.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [164.0, 104.0, 100.0, 27.0, 395.0, 258.0, 8.0, 247.0, 0.0, 58.0, 355.0, 165.0, 43.0, 196.0, 15.0, 165.0, 177.0, 32.0, 6.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [2049.0, 0.0, 3.0, 63.0, 0.0, 1.0, 238.0, 0.0, 1.0, 16.0, 0.0, 0.0, 6.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [849.0, 502.0, 25.0, 108.0, 41.0, 348.0, 72.0, 1.0, 6.0, 27.0, 45.0, 92.0, 42.0, 5.0, 0.0, 10.0, 8.0, 8.0, 5.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [70.0, 1231.0, 0.0, 2.0, 144.0, 86.0, 0.0, 30.0, 0.0, 0.0, 58.0, 15.0, 0.0, 9.0, 251.0, 56.0, 25.0, 0.0, 13.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [60.0, 415.0, 4.0, 0.0, 369.0, 351.0, 0.0, 118.0, 0.0, 0.0, 20.0, 42.0, 0.0, 14.0, 22.0, 21.0, 86.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [1357.0, 1.0, 5.0, 0.0, 3.0, 5.0, 25.0, 8.0, 7.0, 4.0, 5.0, 15.0, 3.0, 1.0, 0.0, 10.0, 6.0, 3.0, 2.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [634.0, 0.0, 190.0, 43.0, 17.0, 0.0, 34.0, 0.0, 0.0, 185.0, 0.0, 0.0, 39.0, 1.0, 0.0, 0.0, 0.0, 24.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [1018.0, 2.0, 1.0, 0.0, 5.0, 0.0, 18.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 4.0, 0.0, 0.0, 0.0, 3.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [124.0, 532.0, 0.0, 0.0, 155.0, 98.0, 0.0, 25.0, 0.0, 0.0, 36.0, 24.0, 0.0, 14.0, 13.0, 19.0, 4.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [128.0, 0.0, 506.0, 2.0, 1.0, 18.0, 2.0, 7.0, 0.0, 1.0, 7.0, 0.0, 30.0, 0.0, 0.0, 11.0, 3.0, 15.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [594.0, 0.0, 12.0, 1.0, 2.0, 0.0, 9.0, 28.0, 0.0, 7.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [48.0, 2.0, 8.0, 4.0, 8.0, 2.0, 2.0, 345.0, 3.0, 9.0, 0.0, 0.0, 6.0, 1.0, 0.0, 0.0, 0.0, 26.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [48.0, 52.0, 2.0, 31.0, 0.0, 59.0, 0.0, 1.0, 0.0, 3.0, 19.0, 48.0, 3.0, 10.0, 0.0, 9.0, 3.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [146.0, 2.0, 5.0, 19.0, 0.0, 12.0, 9.0, 0.0, 0.0, 0.0, 9.0, 7.0, 4.0, 9.0, 0.0, 20.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 171.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 38.0, 0.0, 0.0, 7.0, 0.0, 0.0, 0.0, 0.0, 17.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [9.0, 0.0, 4.0, 197.0, 0.0, 0.0, 1.0, 0.0, 21.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [27.0, 1.0, 1.0, 162.0, 3.0, 0.0, 0.0, 0.0, 0.0, 10.0, 4.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 113.0, 0.0, 0.0, 0.0, 6.0, 0.0, 0.0, 55.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]];
+      credit = false;
+      details = [];
+      details_thumbs = [];
+      noun = "Country and Classification";
+      details_separator = ", ";
+      divide = true;
+      divide_idx = 20;
+      divide_size = 0.6;
+      popup_width = 350.0;
+      verb = "occur together in";
+      title = "MET top 20 Countries and Item Classifications";
+      arc_numbers = false;
+      divide_left_label =  "";
+      divide_right_label = "";
+      inner_radius_scale = 0.45;
+      outer_radius_scale = 1.1;
+      conjunction = "and";
+
+
+      innerRadius = Math.min(width, height) * inner_radius_scale;
+      outerRadius = innerRadius * outer_radius_scale;
+
+      if(divide){
+         //What % of the circle should become empty
+        emptyStroke = Math.round(25669.0 * divide_size);
+        matrix[divide_idx][Names.length-1] = emptyStroke
+        matrix[Names.length-1][divide_idx] = emptyStroke
+        var offset = (2 * Math.PI * (emptyStroke / (25669.0 + emptyStroke))) / 4;
+      }
+      else{
+        offset = 0;
+      }
+      
+      ////////////////////////////////////////////////////////////
+      /////////// Create scale and layout functions //////////////
+      ////////////////////////////////////////////////////////////
+
+      var colors = d3
+        .scaleOrdinal()
+        .domain(d3.range(Names.length))
+        .range(colors);
+
+      //A "custom" d3 chord function that automatically sorts the order of the chords in such a manner to reduce overlap
+      var chord = customChordLayout()
+        .padding(0.01)
+        .sortChords(d3.descending) //which chord should be shown on top when chords cross. Now the biggest chord is at the bottom
+        .matrix(matrix);
+
+      var arc = d3
+        .arc()
+        .innerRadius(innerRadius * 1.01)
+        .outerRadius(outerRadius)
+        .startAngle(startAngle) 
+        .endAngle(endAngle);
+
+      var path = d3.ribbon()
+      .radius(innerRadius)
+      .startAngle(startAngle)
+      .endAngle(endAngle);
+
+      ////////////////////////////////////////////////////////////
+      ////////////////////// Create SVG //////////////////////////
+      ///////////////////////////////////////////////////////////
+
+      var svg = d3
+        .select("#" + tag_id)
+        .append("svg")
+        .attr(
+          "viewBox",
+          "0 0 " +
+            (width + margin.left + margin.right) +
+          " " +
+          (height + margin.top + margin.bottom)
+        )
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .append("g")
+        .attr(
+          "transform",
+          "translate(" +
+            (width / 2 + margin.left) +
+            "," +
+            (height / 2 + margin.top) +
+            ") rotate(0.0)"
+        );
+
+      if(title != ""){
+        svg.append("text")
+          .attr("x", 0)             
+          .attr("y", 0-((height)/2)+18- margin.top)
+          .attr("text-anchor", "middle")  
+          .style("font-size", "18px") 
+          .style("text-decoration", "underline")  
+          .text(title);
+      }
+
+      if (divide_left_label != "") {
+        svg.append("text")
+          .attr("x", 0)
+          .attr("y", 0-((height)/2)+18- margin.top)
+          .attr("transform", "rotate(-90)")
+          .attr("text-anchor", "middle")
+          .style("font-size", "18px")
+          .style("font-weight", "700")
+          .text(divide_left_label);
+          
+      }
+
+      if (divide_right_label != "") {
+        svg.append("text")
+          .attr("x", 0)
+          .attr("y", 0-((height)/2)+18- margin.top)
+          .attr("transform", "rotate(90)")
+          .attr("text-anchor", "middle")
+          .style("font-size", "18px")
+          .style("font-weight", "700")
+          .text(divide_right_label);
+      }
+
+   
+      d3.select("#" + tag_id)
+        .append("span")
+        .style("display", "block")
+        .style("font-size", "12px")
+        .style("text-align", "right")
+
+        .style("font-family", '"Arial", sans-serif')
+        .html(
+          'made with <a href="https://datacrayon.com/shop/product/chord-pro/">chord pro</a>'
+        );
+
+      if(credit){
+      d3.select("#" + tag_id).select("span")
+        .append("span")
+        .style("font-size", "12px")
+        .style("font-family", '"Arial", sans-serif')
+        .html(
+          '[<a href="https://twitter.com/shahinrostami">@ShahinRostami</a>]<br>see more at <a href="https://datacrayon.com">DataCrayon.com</a>'
+        );
+      }
+
+      ////////////////////////////////////////////////////////////
+      /////////////// Create the gradient fills //////////////////
+      ////////////////////////////////////////////////////////////
+
+      //Function to create the id for each chord gradient
+      function getGradID(d) {
+        return (
+          "linkGrad-" + tag_id + "-" + d.source.index + "-" + d.target.index
+        );
+      }
+
+
+
+
+      //Create the gradients definitions for each chord
+      var grads = svg
+        .append("defs")
+        .selectAll("linearGradient")
+        .data(chord.chords())
+        .enter()
+        .append("linearGradient")
+        .attr("id", getGradID)
+        .attr("gradientUnits", "userSpaceOnUse")
+        .attr("x1", function (d, i) {
+          if(d.source.index == d.target.index){
+            return 0;
+          }
+          return (
+            innerRadius *
+            Math.cos(
+              (d.source.endAngle - d.source.startAngle) / 2 +
+                d.source.startAngle -
+                Math.PI / 2
+            )
+          );
+        })
+        .attr("y1", function (d, i) {
+          return (
+            innerRadius *
+            Math.sin(
+              (d.source.endAngle - d.source.startAngle) / 2 +
+                d.source.startAngle -
+                Math.PI / 2
+            )
+          );
+        })
+        .attr("x2", function (d, i) {
+          return (
+            innerRadius *
+            Math.cos(
+              (d.target.endAngle - d.target.startAngle) / 2 +
+                d.target.startAngle -
+                Math.PI / 2
+            )
+          );
+        })
+        .attr("y2", function (d, i) {
+          return (
+            innerRadius *
+            Math.sin(
+              (d.target.endAngle - d.target.startAngle) / 2 +
+                d.target.startAngle -
+                Math.PI / 2
+            )
+          );
+        });
+
+      //Set the starting color (at 0%)
+      grads
+        .append("stop")
+        .attr("offset", "0%")
+        .attr("stop-color", function (d) {
+          return colors(d.source.index);
+        });
+
+      //Set the ending color (at 100%)
+      grads
+        .append("stop")
+        .attr("offset", "100%")
+        .attr("stop-color", function (d) {
+          return colors(d.target.index);
+        });
+
+      ////////////////////////////////////////////////////////////
+      ////////////////// Draw outer Arcs /////////////////////////
+      ////////////////////////////////////////////////////////////
+
+      var outerArcs = svg
+        .selectAll("g.group")
+        .data(chord.groups)
+        .enter()
+        .append("g")
+        .attr("class", "group")
+        .on("mouseover", fade(0.1, 1))
+        .on("mouseout", fade(opacityDefault, opacityDefault));
+
+      outerArcs
+        .append("path")
+        .style("fill", function (d) {
+          return colors(d.index);
+        })
+        .attr("d", arc)
+        .attr("class", function (d) {
+          if(divide){
+            if(d.index == divide_idx || d.index == matrix.length -1){
+            return "hidden_chord";
+            }
+          }
+        })
+        .each(function (d, i) {
+  });
+          ////////////////////////////////////////////////////////////
+          ////////////////// Append Names ////////////////////////////
+          ////////////////////////////////////////////////////////////
+
+          //Append the label names on the outside
+
+            //Append the label names on the outside
+            outerArcs
+              .append("text")
+              .each(function (d) {
+                d.angle = (d.startAngle + d.endAngle) / 2 + offset;
+              })
+              .attr("dy", ".35em")
+                          .attr("class", function (d) {
+              if(divide){
+            if(d.index == divide_idx || d.index == matrix.length -1){
+                return "titles hidden_chord";
+                }
+                else{
+                  return "chord";
+                }
+              }
+              else{
+              return "titles";
+              }
+            })
+              .attr("text-anchor", function (d) {
+                return d.angle > Math.PI ? "end" : null;
+              })
+              .attr("transform", function (d) {
+                return (
+                  "rotate(" +
+                  ((d.angle * 180) / Math.PI - 90) +
+                  ")" +
+                  "translate(" +
+                  (outerRadius + 10) +
+                  ")" +
+                  (d.angle > Math.PI ? "rotate(180)" : "")
+                );
+              })
+              .text(function (d, i) {
+                return Names[i];
+              })
+                  ;
+
+              
+
+          if(arc_numbers){
+            // Show totals within the arcs
+            outerArcs
+              .append("text")
+              .each(function (d) {
+                d.angle = (d.startAngle + d.endAngle) / 2 + offset;
+              })
+              .attr("dy", ".35em")
+              .attr("class", function (d) {
+              if(divide){
+            if(d.index == divide_idx || d.index == matrix.length -1){
+                return "hidden_chord";
+                }
+                else{
+                  return "chord";
+                }
+              }
+              else{
+              return "arc_numbers";
+              }
+            })
+              .attr("text-anchor", function (d) {
+                return d.angle > Math.PI ? "middle" : "middle";
+              })
+              .attr("transform", function (d) {
+                return (
+                  "rotate(" +
+                  ((d.angle * 180) / Math.PI - 90) +
+                  ")" +
+                  "translate(" +
+                  (innerRadius + ((outerRadius - innerRadius)/2))  + 
+                  ")" +
+                  ((d.angle > (Math.PI*1.5) || d.angle < (Math.PI*.5)) ? "rotate(90)" : "rotate(-90)")
+                );
+              })
+              .text(function (d, i) {
+                return matrix[d.index].reduce((a, b) => a + b, 0);
+              });
+          }
+
+          ////////////////////////////////////////////////////////////
+          ////////////////// Draw inner chords ///////////////////////
+          ////////////////////////////////////////////////////////////
+
+          svg
+            .selectAll("path.chord")
+            .data(chord.chords)
+            .enter()
+            .append("path")
+
+            .attr("class", function (d) {
+              if(divide){
+                if(d.source.index == divide_idx){
+                return "chord hidden_chord";
+                }
+                else{
+                  return "chord";
+                }
+              }
+              else{
+              return "chord";
+              }
+            })
+            
+            
+            .style("fill", function (d) {
+              return "url(#" + getGradID(d) + ")";
+            })
+            
+            .style("opacity", opacityDefault)
+            .attr("d", path)
+            .on("mouseover", mouseoverChord(Names, conjunction, noun, verb, details, details_thumbs, details_separator, popup_width))
+            .on("mouseout", mouseoutChord(opacityDefault, opacityDefault));
+      
+
+
+      function startAngle(d) {
+        return d.startAngle + offset;
+      }
+      function endAngle(d) {
+        return d.endAngle + offset;
+      }
+
+
+      //Returns an event handler for fading a given chord group.
+      function fade(opacityIn, opacityOut) {
+        return function (d, i) {
+          d3.select(this.ownerSVGElement)
+            .selectAll("path.chord")
+            .filter(function (d) {
+              return d.source.index !== i && d.target.index !== i;
+            })
+            .transition()
+            .style("opacity", opacityIn);
+
+          d3.select(this.ownerSVGElement)
+            .selectAll("path.chord")
+            .filter(function (d) {
+              return d.source.index == i || d.target.index == i;
+            })
+            .transition()
+            .style("opacity", opacityOut);
+
+            
+        };
+      } //fade
+
+      //Highlight hovered over chord
+      function mouseoverChord(names, conjunction, noun, verb, details, details_thumbs, details_separator, popup_width) {
+        return function (d, i) {
+
+        d3.select(this.ownerSVGElement)
+          .selectAll("path.chord")
+          .transition()
+          .style("opacity", 0.1);
+        //Show hovered over chord with full opacity
+        d3.select(this).transition().style("opacity", 1);
+
+          num_instances = Number(d.source.value);
+        tippy_content = "<span style='font-weight:900'>" +
+            names[d.source.index] +
+            "</span> " + conjunction + " <span style='font-weight:900'>" +
+            names[d.target.index] +
+            "</span><br>" + verb + " <span style='font-weight:900'>" +
+            num_instances +
+            "</span> " + noun;
+
+
+        if (Array.isArray(details) && details.length && 
+            Array.isArray(details_thumbs) && details_thumbs.length) {   
+          if (Array.isArray(details[d.source.index][d.target.index]) && details[d.source.index][d.target.index].length &&
+              Array.isArray(details_thumbs[d.source.index][d.target.index]) && details_thumbs[d.source.index][d.target.index].length) {
+              
+              var figures = '';
+              for(var i = 0; i < details[d.source.index][d.target.index].length; i++) {
+                  figures += "<figure class='details_thumbs-chart-6755e030'><img src=" + details_thumbs[d.source.index][d.target.index][i] + "><figcaption>" + details[d.source.index][d.target.index][i] + "</figcaption></figure>"
+              }
+        
+              tippy_content = tippy_content +
+                "<br><br><center><span><em>" +
+                figures +
+                "</em></span></center>";
+          }
+        }
+        else if (Array.isArray(details) && details.length) {
+          if (Array.isArray(details[d.source.index][d.target.index]) && details[d.source.index][d.target.index].length) {
+                details_content = details[d.source.index][d.target.index].join(details_separator);
+              tippy_content = tippy_content +
+                "<br><br><span><em>" +
+                details_content
+                + "</em></span>";
+          }
+        }
+        else if (Array.isArray(details_thumbs) && details_thumbs.length) {   
+          if (Array.isArray(details_thumbs[d.source.index][d.target.index]) && details_thumbs[d.source.index][d.target.index].length) {
+              
+              var figures = '';
+              for(var i = 0; i < details_thumbs[d.source.index][d.target.index].length; i++) {
+                  figures += "<figure class='details_thumbs'><img src=" + details_thumbs[d.source.index][d.target.index][i] + "></figure>"
+              }
+        
+              tippy_content = tippy_content +
+                "<br><br><center><span><em>" +
+                figures +
+                "</em></span></center>";
+          }
+        }
+        
+        if(this._tippy == null)
+        {
+          tippy(this, {
+            allowHTML: true,
+            followCursor: true,
+            content: tippy_content,
+            size: "large",
+            arrow: true,
+            maxWidth: popup_width,
+            theme:'translucent',
+          });
+        }
+
+      /*d3.select("#list")
+        .html(
+          details[d.source.index][d.target.index]
+        );*/
+      
+
+        };
+        
+      } //fade
+
+      //Bring all chords back to default opacity
+      function mouseoutChord(opacityIn, opacityOut) {
+        return function (d, i) {
+        d3.select(this.ownerSVGElement)
+          .selectAll("path.chord")
+          .transition()
+          .style("opacity", opacityOut);
+        };
+        //Set opacity back to default for all
+      } //function mouseoutChord
+
+
+
+
+        };
+        document.body.appendChild(script2);
+      };
+
+      document.body.appendChild(script);
+    </script>
+
+<!-- Footer -->
+<footer class="footer font-small footer-dark">
+  <div class="footer-copyright text-center py-1">© Copyright Coding Bootcamp 2021</div>      
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body> 
+      
+  </body>
+</html>

@@ -18,17 +18,20 @@
     <ul class="navbar-nav mr-auto">
       </li>
       <li class="nav-item active">
-          <a class="nav-link" href="{{url_for('Visualizations')}}">Visualizations</a>
+          <a class="nav-link" href="{{url_for('Accession-comparison')}}">Dashboard Visualizations</a>
       </li>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{url_for('MET_div_chord)}}">D3/Chord Visualization</a>
+    </li>
       <li class="nav-item active">
           <a class="nav-link" href="{{url_for('Map')}}">Map</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="">Analysis</a>
+        <a class="nav-link" href="">Chinese Art</a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="">Machine Learning Model</a>
+      <a class="nav-link" href="{{url_for('machine_learning')}}">Machine Learning</a>
     </li>
       <li class="nav-item active">
         <a class="nav-link" href="{{url_for('About_Us')}}">About Us</a>
